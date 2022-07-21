@@ -1,0 +1,18 @@
+.home-bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.home-bg svg {
+  height: 100%;
+  width: 100%;
+}
+
+svg circle {
+  stroke: rgba(255, 255, 255, 0.166);
+  stroke-width: 3px;
+  transition-duration: 10s;
+  transition-timing-function: linear;
+}

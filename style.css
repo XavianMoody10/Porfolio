@@ -1,0 +1,279 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+}
+
+:root {
+  --inter-font: "Inter", sans-serif;
+}
+
+nav {
+  border: 1px solid black;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 5px;
+  position: fixed;
+  width: 100%;
+}
+
+.social-links i {
+  color: white;
+  font-size: 2rem;
+  margin: 3px;
+}
+
+.page-links {
+  display: flex;
+}
+
+.page-links li {
+  margin: 0 10px;
+}
+
+.page-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: var(--inter-font);
+}
+
+.current {
+  border-bottom: 2px solid white;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Home Section */
+#home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--inter-font);
+  background-color: rgba(0, 0, 0, 0.744);
+}
+
+.home-content {
+  text-align: center;
+  margin-bottom: 40px;
+  color: white;
+}
+
+.name {
+  font-size: 6rem;
+}
+
+.position {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.statement {
+  font-size: 1rem;
+}
+
+.home-btn {
+  text-decoration: none;
+  border: 1px solid black;
+  padding: 8px 15px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  background-color: white;
+  font-weight: bold;
+  color: black;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* About Section */
+#about {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background-color: black;
+}
+
+#about * {
+  border-color: white;
+  color: white;
+}
+
+.about-me {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  text-align: center;
+}
+
+.sub-heading {
+  font-size: 3rem;
+}
+
+.about-me h2 {
+  margin-bottom: 10px;
+  font-family: var(--inter-font);
+}
+
+.about-me p {
+  text-align: center;
+  line-height: 2rem;
+  width: 83%;
+  font-family: var(--inter-font);
+  border-bottom: 3px solid black;
+  padding-bottom: 15px;
+}
+
+.skills h2 {
+  font-family: var(--inter-font);
+  margin-bottom: 20px;
+}
+
+.skills-flex {
+  border: 1px solid black;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* Projects Section */
+#projects {
+  height: 150vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+
+.projects-grid {
+  /* border: 1px solid black; */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 80%;
+  height: 60%;
+  margin-bottom: 20px;
+  gap: 30px;
+  padding: 10px;
+}
+
+@media (max-width: 1325px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    width: 50%;
+  }
+}
+
+#projects h2 {
+  font-family: var(--inter-font);
+  margin-bottom: 20px;
+  color: white;
+}
+
+.projects {
+  /* border: 1px solid black; */
+  position: relative;
+  background-color: white;
+  /* background-image: url("/Images/weather-app-0.gif"); */
+  background-size: 130%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.arrows {
+  position: absolute;
+  height: 100%;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  transition-duration: 0.5s;
+  z-index: 1;
+}
+
+.arrows:hover {
+  background-color: rgba(0, 0, 0, 0.182);
+}
+
+.fa-angle-left {
+  left: 0;
+}
+
+.fa-angle-right {
+  right: 0;
+}
+
+.bars {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.bars .bar {
+  border: 1px solid black;
+  height: 5px;
+  width: 40px;
+  background-color: black;
+}
+
+.project-info {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.537);
+  height: 100%;
+  width: 100%;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+
+.project-info:hover {
+  opacity: 1;
+}
+
+.project-name {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: var(--inter-font);
+  font-weight: bolder;
+}
+
+.icon-links i {
+  border: 1px solid black;
+  border-radius: 10px;
+  text-align: center;
+  background-color: black;
+  padding: 10px;
+  color: white;
+  margin: 5px;
+}
+
+.icon-links a {
+  font-size: 3rem;
+  text-decoration: none;
+}
