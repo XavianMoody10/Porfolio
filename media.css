@@ -1,0 +1,129 @@
+@media (max-width: 1325px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 830px) {
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #contact {
+    height: auto;
+    margin-top: 100px;
+  }
+
+  form button {
+    /* width: 100%; */
+    align-self: center;
+  }
+
+  #projects .sub-heading {
+    margin-top: 50px;
+  }
+
+  .projects-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .project-info {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 620px) {
+  .my-info h2 {
+    font-size: 2rem;
+  }
+
+  .my-info p {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 436px) {
+  .name {
+    font-size: 3rem;
+  }
+
+  .position {
+    font-size: 1.2rem;
+  }
+
+  .statement {
+    font-size: 0.8rem;
+  }
+
+  .about-me .sub-heading {
+    margin-top: 100px;
+  }
+
+  .skills {
+    margin-bottom: 100px;
+  }
+
+  .home-bg svg circle:nth-of-type(-n + 20) {
+    display: none;
+  }
+
+  .about-me p {
+    height: 200px;
+    overflow-y: auto;
+  }
+
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 30px;
+  }
+
+  .contact-form {
+    width: 90%;
+  }
+}
+
+@media (max-width: 357px) {
+  .page-links {
+    display: none;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .page-links li {
+    margin-bottom: 10px;
+  }
+
+  .fa-bars {
+    display: contents;
+  }
+}
+
+@media (max-width: 537px) {
+  #about {
+    height: auto;
+  }
+
+  #projects .sub-heading {
+    /* margin-top: 200px; */
+  }
+
+  .projects {
+    height: 140px;
+    width: 240px;
+  }
+
+  .project-name {
+    font-size: 1.2rem;
+  }
+
+  .about-me .sub-heading {
+    margin-top: 150px;
+  }
+}

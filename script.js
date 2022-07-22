@@ -100,6 +100,22 @@ const pageNavigationControls = () => {
   });
 };
 
+const mobileNavToggle = () => {
+  const navToggleIcon = document.querySelector(".fa-bars");
+  const pageLinks = document.querySelector(".page-links");
+
+  navToggleIcon.addEventListener("click", (e) => {
+    e.target.classList.toggle("fa-bars");
+    e.target.classList.toggle("fa-times");
+
+    if (e.target.classList.contains("fa-bars")) {
+      pageLinks.style.display = "none";
+    } else {
+      pageLinks.style.display = "contents";
+    }
+  });
+};
+
 // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 const addProjectData = () => {
@@ -146,25 +162,79 @@ const addProjectData = () => {
 
   pro.forEach((projects) => {
     const index = pro.indexOf(projects);
-    // "/Images/weather-app-0.gif"
     projects.style.backgroundImage = `url("/Images/${reverseDataOrder[index].images[0]}")`;
   });
 };
 
 const projectSlideShow = () => {
+  const reverseDataOrder = [...projectsData];
+  reverseDataOrder.reverse();
   const projects = document.querySelectorAll(".projects");
   const leftArrows = document.querySelectorAll(".fa-angle-left");
   const rightArrows = document.querySelectorAll(".fa-angle-right");
   const slideBars = document.querySelectorAll(".bars");
+  const bars = [1, 1, 1, 1, 1, 1];
   const slides = [0, 0, 0, 0, 0, 0];
-  const bars = [0, 0, 0, 0, 0, 0];
+
+  const removeActiveClass = (index, projectBars) => {
+    const bar = slideBars[index].querySelectorAll(".bar");
+
+    if (bars[index] > 3) {
+      bars[index] = 1;
+    }
+
+    if (bars[index] == 0) {
+      bars[index] = 3;
+    }
+
+    bar.forEach((el) => {
+      el.classList.remove("active");
+    });
+
+    projectBars
+      .querySelector(`.bar:nth-of-type(${bars[index]})`)
+      .classList.add("active");
+  };
+
+  rightArrows.forEach((arrow) => {
+    arrow.addEventListener("click", () => {
+      const project = arrow.closest(".projects");
+      const index = [...projects].indexOf(project);
+      const data = reverseDataOrder[index];
+      const projectBars = project.querySelector(".bars");
+      slides[index]++;
+      bars[index]++;
+
+      removeActiveClass(index, projectBars);
+
+      if (slides[index] > 2) {
+        slides[index] = 0;
+      }
+
+      project.style.backgroundImage = `url("/Images/${
+        data.images[slides[index]]
+      }")`;
+    });
+  });
 
   leftArrows.forEach((arrow) => {
     arrow.addEventListener("click", () => {
       const project = arrow.closest(".projects");
+      const index = [...projects].indexOf(project);
+      const data = reverseDataOrder[index];
+      const projectBars = project.querySelector(".bars");
+      slides[index]--;
+      bars[index]--;
 
-      // project.style.backroundImage =
-      console.log(project);
+      removeActiveClass(index, projectBars);
+
+      if (slides[index] < 0 || slides[index] == -1) {
+        slides[index] = 2;
+      }
+
+      project.style.backgroundImage = `url("/Images/${
+        data.images[slides[index]]
+      }")`;
     });
   });
 };
@@ -172,4 +242,5 @@ const projectSlideShow = () => {
 addProjectData();
 homeBackgroundAnimations();
 pageNavigationControls();
+mobileNavToggle();
 projectSlideShow();

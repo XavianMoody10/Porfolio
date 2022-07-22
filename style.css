@@ -27,6 +27,7 @@ nav {
   padding: 10px 5px;
   position: fixed;
   width: 100%;
+  z-index: 10;
 }
 
 .social-links i {
@@ -41,6 +42,7 @@ nav {
 
 .page-links li {
   margin: 0 10px;
+  text-align: center;
 }
 
 .page-links li a {
@@ -52,6 +54,17 @@ nav {
 
 .current {
   border-bottom: 2px solid white;
+}
+
+.fa-bars {
+  color: white;
+  font-size: 2rem;
+  display: none;
+}
+
+.fa-times {
+  color: white;
+  font-size: 2rem;
 }
 
 /* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
@@ -155,30 +168,20 @@ nav {
 
 /* Projects Section */
 #projects {
-  height: 150vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   background-color: black;
+  padding-bottom: 30px;
 }
 
 .projects-grid {
-  /* border: 1px solid black; */
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  width: 80%;
-  height: 60%;
-  margin-bottom: 20px;
-  gap: 30px;
+  gap: 20px;
   padding: 10px;
-}
-
-@media (max-width: 1325px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-    width: 50%;
-  }
 }
 
 #projects h2 {
@@ -195,6 +198,8 @@ nav {
   background-size: 130%;
   background-repeat: no-repeat;
   background-position: center;
+  height: 260px;
+  width: 360px;
 }
 
 .arrows {
@@ -234,6 +239,10 @@ nav {
   height: 5px;
   width: 40px;
   background-color: black;
+}
+
+.bars .active {
+  background-color: white;
 }
 
 .project-info {
@@ -276,4 +285,73 @@ nav {
 .icon-links a {
   font-size: 3rem;
   text-decoration: none;
+}
+
+/* ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+#contact {
+  /* height: 100vh; */
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.contact-form {
+  /* margin-top: 200px; */
+  margin: 30px;
+  width: 55%;
+  font-family: var(--inter-font);
+}
+
+.my-info {
+  border: 1px solid rgba(0, 0, 0, 0.201);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.my-info h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.my-info p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.my-info p a {
+  text-decoration: none;
+  color: black;
+}
+
+form {
+  border: 1px solid rgba(0, 0, 0, 0.137);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100%;
+  gap: 30px;
+  padding: 20px;
+}
+
+form input {
+  height: 50px;
+  padding-left: 10px;
+  width: 100%;
+}
+
+form button {
+  padding: 10px;
+  grid-column: 2/3;
+  width: 50%;
+  justify-self: end;
+  background-color: rgb(1, 225, 1);
+  font-size: 1.2rem;
+  border: none;
+  font-weight: bold;
+}
+
+textarea {
+  grid-column: 1/3;
+  resize: none;
+  height: 200px;
+  padding: 10px;
 }
