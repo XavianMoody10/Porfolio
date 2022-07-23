@@ -182,6 +182,11 @@ nav {
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 10px;
+  direction: rtl;
+}
+
+.projects:nth-of-type(n + 4) {
+  grid-row: 1/2;
 }
 
 #projects h2 {
@@ -195,7 +200,7 @@ nav {
   position: relative;
   background-color: white;
   /* background-image: url("/Images/weather-app-0.gif"); */
-  background-size: 130%;
+  background-size: 110%;
   background-repeat: no-repeat;
   background-position: center;
   height: 260px;

@@ -2,35 +2,31 @@ const projectsData = [
   {
     name: "Weather App",
     images: ["weather-app-0.gif", "weather-app-1.gif", "weather-app-2.gif"],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium nibh ipsum consequat nisl. Tempor orci eu lobortis elementum nibh tellus molestie nunc. ",
     sourceLink: "https://github.com/XavianMoody10/MyWeather-App",
     liveLink: "https://xavian-weather-app.netlify.app/",
     slide: 0,
   },
   {
     name: "Todo App",
-    images: ["weather-app-0.gif", "weather-app-1.gif", "weather-app-2.gif"],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium nibh ipsum consequat nisl. Tempor orci eu lobortis elementum nibh tellus molestie nunc. ",
-    sourceLink: "https://github.com/XavianMoody10/MyWeather-App",
-    liveLink: "https://xavian-weather-app.netlify.app/",
+    images: ["todo_app_1.gif", "todo_app_2.gif", "todo_app_3.gif"],
+    sourceLink: "https://github.com/XavianMoody10/Todo-App",
+    liveLink: "https://xavian-dnd-todo-app.netlify.app/",
     slide: 0,
   },
   {
     name: "PROGFASHION",
-    images: ["weather-app-0.gif", "weather-app-1.gif", "weather-app-2.gif"],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium nibh ipsum consequat nisl. Tempor orci eu lobortis elementum nibh tellus molestie nunc. ",
-    sourceLink: "https://github.com/XavianMoody10/MyWeather-App",
-    liveLink: "https://xavian-weather-app.netlify.app/",
+    images: [
+      "progfashion_app_1.gif",
+      "progfashion_app_2.gif",
+      "progfashion_app_3.gif",
+    ],
+    sourceLink: "https://github.com/XavianMoody10/PROGFASHION",
+    liveLink: "https://xavian-progfashion.netlify.app/",
     slide: 0,
   },
   {
     name: "Expense Tracker",
     images: ["weather-app-0.gif", "weather-app-1.gif", "weather-app-2.gif"],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium nibh ipsum consequat nisl. Tempor orci eu lobortis elementum nibh tellus molestie nunc. ",
     sourceLink: "https://github.com/XavianMoody10/MyWeather-App",
     liveLink: "https://xavian-weather-app.netlify.app/",
     slide: 0,
@@ -38,8 +34,6 @@ const projectsData = [
   {
     name: "PROJECT NAME",
     images: ["weather-app-0.gif", "weather-app-1.gif", "weather-app-2.gif"],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium nibh ipsum consequat nisl. Tempor orci eu lobortis elementum nibh tellus molestie nunc. ",
     sourceLink: "https://github.com/XavianMoody10/MyWeather-App",
     liveLink: "https://xavian-weather-app.netlify.app/",
     slide: 0,
@@ -47,8 +41,6 @@ const projectsData = [
   {
     name: "PROJECT NAME",
     images: ["weather-app-0.gif", "weather-app-1.gif", "weather-app-2.gif"],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pretium nibh ipsum consequat nisl. Tempor orci eu lobortis elementum nibh tellus molestie nunc. ",
     sourceLink: "https://github.com/XavianMoody10/MyWeather-App",
     liveLink: "https://xavian-weather-app.netlify.app/",
     slide: 0,
@@ -75,7 +67,7 @@ const pageNavigationControls = () => {
   const pageLinks = document.querySelectorAll(".page-links li a");
   const sections = document.querySelectorAll("section");
 
-  const toggleNavigationStyle = (target, index) => {
+  const toggleNavigationStyle = (index) => {
     pageLinks.forEach((link) => {
       link.classList.remove("current");
     });
@@ -87,8 +79,8 @@ const pageNavigationControls = () => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           let entryTarget = entry.target;
-          let entryIndex = [...sections].indexOf(entry.target);
-          toggleNavigationStyle(entryTarget, entryIndex);
+          let entryIndex = [...sections].indexOf(entryTarget);
+          toggleNavigationStyle(entryIndex);
         }
       });
     },
@@ -137,13 +129,13 @@ const addProjectData = () => {
       <p class="project-name">${data.name}</p>
 
       <div class="icon-links">
-        <a href="${data.sourceLink}">
-          <i class="fa-brands fa-github-square"></i>
-        </a>
-
-        <a href="${data.liveLink}">
+        <a href="${data.liveLink}" target="_blank">
           <i class="fas fa-desktop-alt"></i>
         </a>
+
+        <a href="${data.sourceLink}" target="_blank">
+          <i class="fa-brands fa-github-square"></i>
+        </a>  
       </div>
     </div>
   </div>`;
@@ -151,7 +143,7 @@ const addProjectData = () => {
     projectsGrid.insertAdjacentHTML("afterbegin", html);
   };
 
-  reverseDataOrder.forEach((data) => {
+  projectsData.forEach((data) => {
     createProjectElements(data);
   });
 
