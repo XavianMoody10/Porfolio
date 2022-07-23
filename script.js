@@ -26,9 +26,9 @@ const projectsData = [
   },
   {
     name: "Expense Tracker",
-    images: ["weather-app-0.gif", "weather-app-1.gif", "weather-app-2.gif"],
-    sourceLink: "https://github.com/XavianMoody10/MyWeather-App",
-    liveLink: "https://xavian-weather-app.netlify.app/",
+    images: ["expense-app_1.gif", "expense-app_2.gif", "expense-app_3.gif"],
+    sourceLink: "https://github.com/XavianMoody10/Expense-Tracker-App",
+    liveLink: "https://expense-tracker-app-blond.vercel.app/",
     slide: 0,
   },
   {
